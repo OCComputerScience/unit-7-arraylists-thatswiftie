@@ -16,11 +16,13 @@ public class Main
         }
 
         // Create the TicketOrganizer object
-
+        TicketOrganizer passTickets = new TicketOrganizer(tickets);
         // Print the methods
         System.out.println("\nPassengers Ordered by Boarding Group:");
+        passTickets.printPassengersByBoardingGroup();
 
         System.out.println("\nPassengers in line who can board together:");
+        passTickets.canBoardTogether();
 
     }
 

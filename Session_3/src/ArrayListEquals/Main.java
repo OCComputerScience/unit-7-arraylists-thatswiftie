@@ -23,7 +23,7 @@ public class Main
 
         // Test if list1 is equal to list 2
         System.out.println(equals(list1, list2));
-        
+
         ArrayList<Integer> list3 = new ArrayList<>() {{
             add(1);
             add(9);
