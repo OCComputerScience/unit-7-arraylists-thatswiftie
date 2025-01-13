@@ -8,9 +8,25 @@ public class Main
     {
         ArrayList<String> members = new ArrayList<String>();
         addMembers(members);
-        members.
+
+        printArrList(members);
+        DataPurge.removeDuplicates(members);
+
+        printArrList(members);
+        DataPurge.removeNames(members, "Braun");
+        printArrList(members);
+
+        System.out.println("List is correctly formatted: " + DataPurge.correctlyFormatted(members));
 
     }
+
+    private static void printArrList(ArrayList<String> members) {
+        for(String member : members)
+        {
+            System.out.println(member);
+        }
+    }
+
     public static void addMembers(ArrayList<String> emails)
     {
         emails.add("London Braun");
