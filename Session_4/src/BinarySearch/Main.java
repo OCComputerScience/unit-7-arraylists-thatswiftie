@@ -13,7 +13,30 @@ public class Main
                 78, 81, 85, 88, 89
         ));
 
+        System.out.println(binarySearch(sortedNumbers, 89));
 
+    }
 
+    public static int binarySearch(ArrayList<Integer> intList, int target)
+    {
+        int left = 0;
+        int right = intList.size();
+        while(left +1 != right)
+        {
+            int mid = left + (right-left) / 2;
+            if(intList.get(mid) == target)
+            {
+                return mid;
+            }
+            else if (intList.get(mid) > target)
+            {
+                right = mid;
+            }
+            else
+            {
+                left = mid;
+            }
+        }
+        return -1;
     }
 }
