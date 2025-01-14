@@ -13,7 +13,10 @@ public class Main
                 78, 81, 85, 88, 89
         ));
 
+        System.out.println(binarySearch(sortedNumbers, 51));
         System.out.println(binarySearch(sortedNumbers, 89));
+        System.out.println(binarySearch(sortedNumbers, 22));
+        System.out.println(binarySearch(sortedNumbers, 13));
 
     }
 
