@@ -11,31 +11,42 @@ public class Main
         addPlayers(availablePlayers);
 
 
-        ArrayList<String> roster = new ArrayList<String>(5);
+        String[] roster = new String[5];
         Scanner input = new Scanner(System.in);
         System.out.println("Add five players to your team");
         for(int i = 0; i < 5; i++)
         {
             System.out.println("Enter name of player you would like to add");
             String player = input.nextLine();
-            if(checkForPlayer(availablePlayers, player))
-            {
+            if(search(availablePlayers, player) != -1) {
                 System.out.println("Successfully added player");
-                roster += player;
+                availablePlayers.remove(search(availablePlayers,player));
+                roster[i] = player;
             }
+            else
+            {
+                System.out.println(player + " is not an availible player ");
+                i--;
+            }
+        }
+        System.out.println("Final Team Roster:");
+        for(int i = 0; i < roster.length; i++)
+        {
+            System.out.println(roster[i]);
         }
     }
 
-    public static boolean checkForPlayer(ArrayList playerList, String player)
+    public static int search(ArrayList playerList, String player)
     {
+        if(playerList.isEmpty()) return -1;
         for(int i = 0; i < playerList.size(); i++)
         {
             if(player.equals(playerList.get(i)))
             {
-                return true;
+                return i;
             }
         }
-        return false;
+        return -1;
     }
 
     public static void addPlayers(ArrayList<String> array)
