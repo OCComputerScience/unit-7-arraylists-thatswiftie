@@ -27,11 +27,12 @@ public class Main
         while(left <= right)
         {
             int mid = left + (right-left) / 2;
-            if(intList.get(mid) == target)
+            int currentVal = intList.get(mid);
+            if(currentVal == target)
             {
                 return mid;
             }
-            else if (intList.get(mid) > target)
+            else if (currentVal > target)
             {
                 right = mid - 1;
             }
