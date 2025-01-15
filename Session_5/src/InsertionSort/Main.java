@@ -31,16 +31,10 @@ public class Main
             int currNumber =  arr[i];
             int currIndex = i - 1;
 
-            while(arr[currIndex] > currNumber &&(currIndex >= 0))
+            while((currIndex >= 0) && arr[currIndex] > currNumber)
             {
                 arr[currIndex + 1] = arr[currIndex];
                 currIndex--;
-
-                //had to add this because it would throw an error at me without it (Something with currIndex >= 0 index out of bounds)
-                if(currIndex < 0)
-                {
-                    break;
-                }
             }
 
             arr[currIndex + 1] = currNumber;
